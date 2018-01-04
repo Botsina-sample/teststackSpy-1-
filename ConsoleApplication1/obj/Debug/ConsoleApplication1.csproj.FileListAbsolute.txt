@@ -1,0 +1,11 @@
+C:\Users\kiettt.td\Downloads\teststackSpy\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\kiettt.td\Downloads\teststackSpy\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\kiettt.td\Downloads\teststackSpy\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\kiettt.td\Downloads\teststackSpy\ConsoleApplication1\bin\Debug\FlaUI.Core.dll
+C:\Users\kiettt.td\Downloads\teststackSpy\ConsoleApplication1\bin\Debug\FlaUI.UIA3.dll
+C:\Users\kiettt.td\Downloads\teststackSpy\ConsoleApplication1\bin\Debug\Interop.UIAutomationClient.dll
+C:\Users\kiettt.td\Downloads\teststackSpy\ConsoleApplication1\bin\Debug\FlaUI.Core.xml
+C:\Users\kiettt.td\Downloads\teststackSpy\ConsoleApplication1\bin\Debug\FlaUI.UIA3.xml
+C:\Users\kiettt.td\Downloads\teststackSpy\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Users\kiettt.td\Downloads\teststackSpy\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\kiettt.td\Downloads\teststackSpy\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

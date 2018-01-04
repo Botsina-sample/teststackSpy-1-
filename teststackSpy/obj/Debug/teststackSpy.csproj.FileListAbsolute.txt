@@ -1,0 +1,15 @@
+C:\Users\Kiet\Desktop\R&D SourceCode\TestStack\teststackSpy\teststackSpy\bin\Debug\teststackSpy.exe.config
+C:\Users\Kiet\Desktop\R&D SourceCode\TestStack\teststackSpy\teststackSpy\bin\Debug\teststackSpy.exe
+C:\Users\Kiet\Desktop\R&D SourceCode\TestStack\teststackSpy\teststackSpy\bin\Debug\teststackSpy.pdb
+C:\Users\Kiet\Desktop\R&D SourceCode\TestStack\teststackSpy\teststackSpy\obj\Debug\teststackSpy.csprojResolveAssemblyReference.cache
+C:\Users\Kiet\Desktop\R&D SourceCode\TestStack\teststackSpy\teststackSpy\obj\Debug\teststackSpy.exe
+C:\Users\Kiet\Desktop\R&D SourceCode\TestStack\teststackSpy\teststackSpy\obj\Debug\teststackSpy.pdb
+C:\Users\kiettt.td\Downloads\teststackSpy\teststackSpy\bin\Debug\teststackSpy.exe.config
+C:\Users\kiettt.td\Downloads\teststackSpy\teststackSpy\obj\Debug\teststackSpy.exe
+C:\Users\kiettt.td\Downloads\teststackSpy\teststackSpy\obj\Debug\teststackSpy.pdb
+C:\Users\kiettt.td\Downloads\teststackSpy\teststackSpy\bin\Debug\teststackSpy.exe
+C:\Users\kiettt.td\Downloads\teststackSpy\teststackSpy\bin\Debug\teststackSpy.pdb
+C:\Users\kiettt.td\Downloads\teststackSpy\teststackSpy\obj\Debug\teststackSpy.csprojResolveAssemblyReference.cache
+C:\Users\Kiet\Desktop\teststackSpy(1)\teststackSpy\bin\Debug\teststackSpy.exe.config
+C:\Users\Kiet\Desktop\teststackSpy(1)\teststackSpy\obj\Debug\teststackSpy.exe
+C:\Users\Kiet\Desktop\teststackSpy(1)\teststackSpy\obj\Debug\teststackSpy.pdb
