@@ -50,24 +50,65 @@ namespace WpfApplication1
             SelectionItemPattern selectPattern = (SelectionItemPattern)itemToSelect.GetCurrentPattern(SelectionItemPattern.Pattern);
             selectPattern.Select();
         }
-        public static void SetSelectedComboBoxItem(this AutomationElement comboBox, string item)
+        #region 1st Way to select combobox item
+        //public static void SetSelectedComboBoxItem(this AutomationElement comboBox, string item)
+        //{
+        //    AutomationPattern automationPatternFromElement = GetSpecifiedPattern(comboBox, "ExpandCollapsePatternIdentifiers.Pattern");
+
+        //    ExpandCollapsePattern expandCollapsePattern = comboBox.GetCurrentPattern(automationPatternFromElement) as ExpandCollapsePattern;
+
+        //    expandCollapsePattern.Expand();
+        //    expandCollapsePattern.Collapse();
+
+        //    AutomationElement listItem = comboBox.FindFirst(TreeScope.Subtree, new System.Windows.Automation.PropertyCondition(AutomationElement.NameProperty, item));
+
+        //    automationPatternFromElement = GetSpecifiedPattern(listItem, "SelectionItemPatternIdentifiers.Pattern");
+
+        //    SelectionItemPattern selectionItemPattern = listItem.GetCurrentPattern(automationPatternFromElement) as SelectionItemPattern;
+
+        //    selectionItemPattern.Select();
+        //}
+        #endregion
+        #region 2nd Way to select combobox item
+        public static void SetSelectedComboBoxItem(this AutomationElement comboBoxElement, string item)
         {
-            AutomationPattern automationPatternFromElement = GetSpecifiedPattern(comboBox, "ExpandCollapsePatternIdentifiers.Pattern");
+            if (comboBoxElement == null)
+                throw new Exception("Combo Box not found");
 
-            ExpandCollapsePattern expandCollapsePattern = comboBox.GetCurrentPattern(automationPatternFromElement) as ExpandCollapsePattern;
+            //Get the all the list items in the ComboBox
 
-            expandCollapsePattern.Expand();
-            expandCollapsePattern.Collapse();
 
-            AutomationElement listItem = comboBox.FindFirst(TreeScope.Subtree, new System.Windows.Automation.PropertyCondition(AutomationElement.NameProperty, item));
+            //Expand the combobox
+            ExpandCollapsePattern expandPattern = (ExpandCollapsePattern)comboBoxElement.GetCurrentPattern(ExpandCollapsePattern.Pattern);
+            expandPattern.Expand();
+            expandPattern.Collapse();
+            AutomationElementCollection comboboxItem = comboBoxElement.FindAll(TreeScope.Subtree, new System.Windows.Automation.PropertyCondition(AutomationElement.ControlTypeProperty, ControlType.ListItem));
+            int i = 0;
+            //try to get patterns
+            //foreach(AutomationElement cbcItem in comboboxItem)
+            //{
+            //    foreach (AutomationPattern ap in cbcItem.GetSupportedPatterns())
+            //    {
+            //        MessageBox.Show(ap.ProgrammaticName);
 
-            automationPatternFromElement = GetSpecifiedPattern(listItem, "SelectionItemPatternIdentifiers.Pattern");
+            //    }
+            //}
+            foreach (AutomationElement cbxItem in comboboxItem)
+            {
+                if(cbxItem.FindFirst(TreeScope.Children, System.Windows.Automation.Condition.TrueCondition).Current.Name==item)
+                {
+                    break;
+                }
+                i++;
+            }
+            //Index to set in combo box
+            AutomationElement itemToSelect = comboboxItem[i];
 
-            SelectionItemPattern selectionItemPattern = listItem.GetCurrentPattern(automationPatternFromElement) as SelectionItemPattern;
-
-            selectionItemPattern.Select();
+            //Finding the pattern which need to select
+            SelectionItemPattern selectPattern = (SelectionItemPattern)itemToSelect.GetCurrentPattern(SelectionItemPattern.Pattern);
+            selectPattern.Select();
         }
-
+        #endregion
         public static AutomationPattern GetSpecifiedPattern( this AutomationElement element, string patternName)
         {
             AutomationPattern[] supportedPattern = element.GetSupportedPatterns();
@@ -119,30 +160,31 @@ namespace WpfApplication1
             AutomationElementCollection automationCollection = AutomationElement.RootElement.FindAll(TreeScope.Children, System.Windows.Automation.Condition.TrueCondition);
             foreach (AutomationElement automation in automationCollection)
             {
-                if (automation.Current.Name == "TestForm")// sửa lại thành cửa sổ đang cần spy
+                if (automation.Current.Name == "Configuration")// sửa lại thành cửa sổ đang cần spy
                 {
                     target = automation;
                     break;
                 }
 
             }
-            Process[] flexproc = Process.GetProcessesByName("WpfApplication1");// Sửa lại tên app
+            Process[] flexproc = Process.GetProcessesByName("FlexBARMS");// Sửa lại tên app
             TestMethod.SetForegroundWindow(flexproc[0].MainWindowHandle);
             Thread.Sleep(1000);
             var automationlist = TestMethod.GetAllDescendants(target);
-
+            int i = 0;
             foreach (AutomationElement a in automationlist)
             {
-                listBox.Items.Add(a.Current.AutomationId);
-                if (a.Current.AutomationId == "comboBox")// sửa lại thành PersonalCountryCmb
+                listBox.Items.Add(i+a.Current.AutomationId+"_"+a.Current.Name+"_"+a.Current.ControlType.LocalizedControlType);
+                //if (a.Current.AutomationId == "comboBox")// sửa lại thành PersonalCountryCmb
+                if (i == 50)
                 {
 
 
                     try
                     {
-                        a.ActionSelectComboBoxItem(2);
-                        Thread.Sleep(1000);
-                        a.SetSelectedComboBoxItem("B");
+                        //a.ActionSelectComboBoxItem(2);
+                        //Thread.Sleep(1000);
+                        a.SetSelectedComboBoxItem("LPD");
 
                     }
                     catch (Exception error)
@@ -150,6 +192,7 @@ namespace WpfApplication1
                         MessageBox.Show(error.Message);
                     }
                 }
+                i++;
             }
             #endregion
             //var items = a.FindAll(TreeScope.Descendants, new System.Windows.Automation.PropertyCondition(AutomationElement.AutomationIdProperty, "PART_Item"));
