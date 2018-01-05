@@ -160,7 +160,7 @@ namespace WpfApplication1
             AutomationElementCollection automationCollection = AutomationElement.RootElement.FindAll(TreeScope.Children, System.Windows.Automation.Condition.TrueCondition);
             foreach (AutomationElement automation in automationCollection)
             {
-                if (automation.Current.Name == "Configuration")// sửa lại thành cửa sổ đang cần spy
+                if (automation.Current.Name == "Hệ Thống Quản Lý Bán Lẻ")// sửa lại thành cửa sổ đang cần spy
                 {
                     target = automation;
                     break;
@@ -175,8 +175,8 @@ namespace WpfApplication1
             foreach (AutomationElement a in automationlist)
             {
                 listBox.Items.Add(i+a.Current.AutomationId+"_"+a.Current.Name+"_"+a.Current.ControlType.LocalizedControlType);
-                //if (a.Current.AutomationId == "comboBox")// sửa lại thành PersonalCountryCmb
-                if (i == 50)
+                if (a.Current.AutomationId == "PersonalCountryCmb")// sửa lại thành PersonalCountryCmb
+                //if (i == 63)
                 {
 
 
@@ -184,7 +184,7 @@ namespace WpfApplication1
                     {
                         //a.ActionSelectComboBoxItem(2);
                         //Thread.Sleep(1000);
-                        a.SetSelectedComboBoxItem("LPD");
+                        ((ValuePattern)a.GetCurrentPattern(ValuePattern.Pattern)).SetValue("Russia");
 
                     }
                     catch (Exception error)
