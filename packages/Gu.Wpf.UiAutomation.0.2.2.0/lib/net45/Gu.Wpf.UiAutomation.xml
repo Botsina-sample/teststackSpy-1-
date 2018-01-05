@@ -15,11 +15,6 @@
             </summary>
             <param name="dispose">Disposal action which will be run upon calling Dispose.</param>
         </member>
-        <member name="P:Gu.Wpf.UiAutomation.ActionDisposable.IsDisposed">
-            <summary>
-            Gets a value that indicates whether the object is disposed.
-            </summary>
-        </member>
         <member name="M:Gu.Wpf.UiAutomation.ActionDisposable.Dispose">
             <summary>
             Calls the disposal action if and only if the current instance hasn't been disposed yet.
@@ -241,7 +236,7 @@
         </member>
         <member name="T:Gu.Wpf.UiAutomation.ComboBox">
             <summary>
-            Element which can be used for combobox elements.
+            Element which can be used for ComboBox elements.
             </summary>
         </member>
         <member name="P:Gu.Wpf.UiAutomation.ComboBox.IsEditable">
@@ -253,21 +248,6 @@
             <summary>
             Flag which indicates, if the <see cref="T:Gu.Wpf.UiAutomation.ComboBox"/> is readonly or not.
             Note that readonly only affects text input.
-            </summary>
-        </member>
-        <member name="P:Gu.Wpf.UiAutomation.ComboBox.SelectedItems">
-            <summary>
-            Gets all selected items.
-            </summary>
-        </member>
-        <member name="P:Gu.Wpf.UiAutomation.ComboBox.SelectedItem">
-            <summary>
-            Gets the first selected item or null otherwise.
-            </summary>
-        </member>
-        <member name="P:Gu.Wpf.UiAutomation.ComboBox.Items">
-            <summary>
-            Gets all items.
             </summary>
         </member>
         <member name="P:Gu.Wpf.UiAutomation.ComboBox.EditableText">
@@ -291,18 +271,6 @@
             Simulate typing in text. This is slower than setting Text but raises more events.
             </summary>
         </member>
-        <member name="M:Gu.Wpf.UiAutomation.ComboBox.Select(System.Int32)">
-            <summary>
-            Select an item by index.
-            </summary>
-        </member>
-        <member name="M:Gu.Wpf.UiAutomation.ComboBox.Select(System.String)">
-            <summary>
-            Select the first item which matches the given text.
-            </summary>
-            <param name="textToFind">The text to search for.</param>
-            <returns>The first found item or null if no item matches.</returns>
-        </member>
         <member name="T:Gu.Wpf.UiAutomation.ComboBoxItem">
             <summary>
             Represents an item in a <see cref="T:Gu.Wpf.UiAutomation.ComboBox"/>
@@ -310,7 +278,7 @@
         </member>
         <member name="P:Gu.Wpf.UiAutomation.ContentControl.Text">
             <summary>
-            The header text.
+            The content as text.
             </summary>
         </member>
         <member name="P:Gu.Wpf.UiAutomation.ContentControl.ContentCollection">
@@ -397,115 +365,68 @@
             Brings the element to the foreground.
             </summary>
         </member>
-        <member name="M:Gu.Wpf.UiAutomation.Expander.Expand(System.TimeSpan)">
+        <member name="P:Gu.Wpf.UiAutomation.DataGrid.RowCount">
             <summary>
-            Invokes <see cref="M:Gu.Wpf.UiAutomation.Expander.Expand"/>.
-            Then waits for <paramref name="delay"/>, useful if there is an animation.
-            </summary>
-            <param name="delay">The time to wait after the click. Useful if there is an animation for example.</param>
-        </member>
-        <member name="T:Gu.Wpf.UiAutomation.GridCell">
-            <summary>
-            Cell element for grids and tables.
+            Gets the total row count excluding new item placeholder.
             </summary>
         </member>
-        <member name="P:Gu.Wpf.UiAutomation.GridCell.ContainingRow">
-            <summary>
-            Get the parent of the cell (which should be the row)
-            </summary>
-        </member>
-        <member name="M:Gu.Wpf.UiAutomation.GridCell.Enter(System.String,System.Nullable{System.TimeSpan})">
-            <summary>
-            Simulate typing in text. This is slower than setting Text but raises more events.
-            </summary>
-        </member>
-        <member name="T:Gu.Wpf.UiAutomation.GridHeader">
-            <summary>
-            Header item for grids and tables.
-            </summary>
-        </member>
-        <member name="T:Gu.Wpf.UiAutomation.GridRow">
-            <summary>
-            Row element for grids and tables.
-            </summary>
-        </member>
-        <member name="M:Gu.Wpf.UiAutomation.GridRow.FindCellByText(System.String)">
-            <summary>
-            Find a cell by a given text.
-            </summary>
-        </member>
-        <member name="T:Gu.Wpf.UiAutomation.GridView">
-            <summary>
-            Element for grids and tables.
-            </summary>
-        </member>
-        <member name="P:Gu.Wpf.UiAutomation.GridView.RowCount">
-            <summary>
-            Gets the total row count.
-            </summary>
-        </member>
-        <member name="P:Gu.Wpf.UiAutomation.GridView.ColumnCount">
+        <member name="P:Gu.Wpf.UiAutomation.DataGrid.ColumnCount">
             <summary>
             Gets the total column count.
             </summary>
         </member>
-        <member name="P:Gu.Wpf.UiAutomation.GridView.ColumnHeaders">
+        <member name="P:Gu.Wpf.UiAutomation.DataGrid.DetailsPresenter">
+            <summary>
+            The presenter for row header template.
+            </summary>
+        </member>
+        <member name="P:Gu.Wpf.UiAutomation.DataGrid.ColumnHeaders">
             <summary>
             Gets all column header elements.
             </summary>
         </member>
-        <member name="P:Gu.Wpf.UiAutomation.GridView.RowHeaders">
-            <summary>
-            Gets all row header elements.
-            </summary>
-        </member>
-        <member name="P:Gu.Wpf.UiAutomation.GridView.RowOrColumnMajor">
-            <summary>
-            Gets whether the data should be read primarily by row or by column.
-            </summary>
-        </member>
-        <member name="P:Gu.Wpf.UiAutomation.GridView.Rows">
+        <member name="P:Gu.Wpf.UiAutomation.DataGrid.Rows">
             <summary>
             Returns the rows which are currently visible to Interop.UIAutomationClient. Might not be the full list (eg. in virtualized lists)!
-            Use <see cref="M:Gu.Wpf.UiAutomation.GridView.GetRowByIndex(System.Int32)" /> to make sure to get the correct row.
+            Use <see cref="M:Gu.Wpf.UiAutomation.DataGrid.GetRowByIndex(System.Int32)" /> to make sure to get the correct row.
             </summary>
         </member>
-        <member name="P:Gu.Wpf.UiAutomation.GridView.SelectedItems">
+        <member name="P:Gu.Wpf.UiAutomation.DataGrid.SelectedItems">
             <summary>
             Gets all selected items.
             </summary>
         </member>
-        <member name="P:Gu.Wpf.UiAutomation.GridView.SelectedItem">
+        <member name="P:Gu.Wpf.UiAutomation.DataGrid.SelectedItem">
             <summary>
             Gets the first selected item or null otherwise.
             </summary>
         </member>
-        <member name="M:Gu.Wpf.UiAutomation.GridView.Select(System.Int32)">
+        <member name="M:Gu.Wpf.UiAutomation.DataGrid.Select(System.Int32)">
             <summary>
             Select a row by index.
             </summary>
         </member>
-        <member name="M:Gu.Wpf.UiAutomation.GridView.Select(System.Int32,System.Int32)">
+        <member name="M:Gu.Wpf.UiAutomation.DataGrid.Select(System.Int32,System.Int32)">
             <summary>
             Select a row by index.
             </summary>
         </member>
-        <member name="M:Gu.Wpf.UiAutomation.GridView.Select(System.Int32,System.String)">
+        <member name="M:Gu.Wpf.UiAutomation.DataGrid.Select(System.Int32,System.String)">
             <summary>
             Select the first row by text in the given column.
             </summary>
         </member>
-        <member name="M:Gu.Wpf.UiAutomation.GridView.GetRowByIndex(System.Int32)">
+        <member name="M:Gu.Wpf.UiAutomation.DataGrid.GetRowByIndex(System.Int32)">
             <summary>
             Get a row by index.
             </summary>
         </member>
-        <member name="M:Gu.Wpf.UiAutomation.GridView.GetRowByValue(System.Int32,System.String)">
+        <member name="M:Gu.Wpf.UiAutomation.DataGrid.GetRowByValue(System.Int32,System.String)">
             <summary>
             Get a row by text in the given column.
             </summary>
         </member>
-        <member name="M:Gu.Wpf.UiAutomation.GridView.GetRowsByValue(System.Int32,System.String,System.Int32)">
+        <member name="M:Gu.Wpf.UiAutomation.DataGrid.GetRowsByValue(System.Int32,System.String,System.Int32)">
             <summary>
             Get all rows where the value of the given column matches the given value.
             </summary>
@@ -513,6 +434,38 @@
             <param name="value">The value to check.</param>
             <param name="maxItems">Maximum numbers of items to return, 0 for all.</param>
             <returns>List of found rows.</returns>
+        </member>
+        <member name="P:Gu.Wpf.UiAutomation.DataGridCell.ContainingRow">
+            <summary>
+            Get the parent of the cell (which should be the row)
+            </summary>
+        </member>
+        <member name="M:Gu.Wpf.UiAutomation.DataGridCell.Enter(System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            Simulate typing in text. This is slower than setting Text but raises more events.
+            </summary>
+        </member>
+        <member name="M:Gu.Wpf.UiAutomation.DataGridRow.FindCellByText(System.String)">
+            <summary>
+            Find a cell by a given text.
+            </summary>
+        </member>
+        <member name="M:Gu.Wpf.UiAutomation.Expander.Expand(System.TimeSpan)">
+            <summary>
+            Invokes <see cref="M:Gu.Wpf.UiAutomation.Expander.Expand"/>.
+            Then waits for <paramref name="delay"/>, useful if there is an animation.
+            </summary>
+            <param name="delay">The time to wait after the click. Useful if there is an animation for example.</param>
+        </member>
+        <member name="T:Gu.Wpf.UiAutomation.GridHeader">
+            <summary>
+            Header item for grids and tables.
+            </summary>
+        </member>
+        <member name="T:Gu.Wpf.UiAutomation.GridViewCell">
+            <summary>
+            Cell element for grids and tables.
+            </summary>
         </member>
         <member name="P:Gu.Wpf.UiAutomation.HeaderedContentControl.HeaderText">
             <summary>
@@ -545,34 +498,60 @@
             So it assumes there is exactly one element in the header.
             </summary>
         </member>
-        <member name="P:Gu.Wpf.UiAutomation.ListBox.Items">
+        <member name="P:Gu.Wpf.UiAutomation.HorizontalScrollBar.SmallDecrementText">
+            <inheritdoc/>
+        </member>
+        <member name="P:Gu.Wpf.UiAutomation.HorizontalScrollBar.SmallIncrementText">
+            <inheritdoc/>
+        </member>
+        <member name="P:Gu.Wpf.UiAutomation.HorizontalScrollBar.LargeDecrementText">
+            <inheritdoc/>
+        </member>
+        <member name="P:Gu.Wpf.UiAutomation.HorizontalScrollBar.LargeIncrementText">
+            <inheritdoc/>
+        </member>
+        <member name="P:Gu.Wpf.UiAutomation.ListView.RowCount">
             <summary>
-            Returns the rows which are currently visible to Interop.UIAutomationClient. Might not be the full list (eg. in virtualized lists)!
+            Gets the total row count.
             </summary>
         </member>
-        <member name="P:Gu.Wpf.UiAutomation.ListBox.SelectedItems">
+        <member name="P:Gu.Wpf.UiAutomation.ListView.ColumnCount">
             <summary>
-            Gets all selected items.
+            Gets the total column count.
             </summary>
         </member>
-        <member name="P:Gu.Wpf.UiAutomation.ListBox.SelectedItem">
+        <member name="P:Gu.Wpf.UiAutomation.ListView.ColumnHeaders">
             <summary>
-            Gets the first selected item or null otherwise.
+            Gets all column header elements.
             </summary>
         </member>
-        <member name="M:Gu.Wpf.UiAutomation.ListBox.Select(System.Int32)">
+        <member name="M:Gu.Wpf.UiAutomation.ListView.Select(System.Int32,System.String)">
             <summary>
-            Select a row by index.
+            Select the first row by text in the given column.
             </summary>
         </member>
-        <member name="M:Gu.Wpf.UiAutomation.ListBox.AddToSelection(System.Int32)">
+        <member name="M:Gu.Wpf.UiAutomation.ListView.GetRowByIndex(System.Int32)">
             <summary>
-            Add a row to the selection by index.
+            Get a row by index.
             </summary>
         </member>
-        <member name="M:Gu.Wpf.UiAutomation.ListBox.RemoveFromSelection(System.Int32)">
+        <member name="M:Gu.Wpf.UiAutomation.ListView.GetRowByValue(System.Int32,System.String)">
             <summary>
-            Remove a row from the selection by index.
+            Get a row by text in the given column.
+            </summary>
+        </member>
+        <member name="M:Gu.Wpf.UiAutomation.ListView.GetRowsByValue(System.Int32,System.String,System.Int32)">
+            <summary>
+            Get all rows where the value of the given column matches the given value.
+            </summary>
+            <param name="columnIndex">The column index to check.</param>
+            <param name="value">The value to check.</param>
+            <param name="maxItems">Maximum numbers of items to return, 0 for all.</param>
+            <returns>List of found rows.</returns>
+        </member>
+        <member name="M:Gu.Wpf.UiAutomation.ListViewItem.FindCellByText(System.String)">
+            <summary>
+            Find a cell by a given text.
             </summary>
         </member>
         <member name="T:Gu.Wpf.UiAutomation.Menu">
@@ -598,6 +577,21 @@
         <member name="T:Gu.Wpf.UiAutomation.MenuItems">
             <summary>
             Represents a list of <see cref="T:Gu.Wpf.UiAutomation.MenuItem"/>s.
+            </summary>
+        </member>
+        <member name="P:Gu.Wpf.UiAutomation.MultiSelector`1.SelectedItems">
+            <summary>
+            Gets all selected items.
+            </summary>
+        </member>
+        <member name="M:Gu.Wpf.UiAutomation.MultiSelector`1.AddToSelection(System.Int32)">
+            <summary>
+            Add a row to the selection by index.
+            </summary>
+        </member>
+        <member name="M:Gu.Wpf.UiAutomation.MultiSelector`1.RemoveFromSelection(System.Int32)">
+            <summary>
+            Remove a row from the selection by index.
             </summary>
         </member>
         <member name="T:Gu.Wpf.UiAutomation.SelectionItemControl">
@@ -630,66 +624,53 @@
             Flag to get/set the selection of this element.
             </summary>
         </member>
-        <member name="P:Gu.Wpf.UiAutomation.HorizontalScrollBar.SmallDecrementText">
-            <inheritdoc/>
-        </member>
-        <member name="P:Gu.Wpf.UiAutomation.HorizontalScrollBar.SmallIncrementText">
-            <inheritdoc/>
-        </member>
-        <member name="P:Gu.Wpf.UiAutomation.HorizontalScrollBar.LargeDecrementText">
-            <inheritdoc/>
-        </member>
-        <member name="P:Gu.Wpf.UiAutomation.HorizontalScrollBar.LargeIncrementText">
-            <inheritdoc/>
-        </member>
-        <member name="P:Gu.Wpf.UiAutomation.VerticalScrollBar.SmallDecrementText">
-            <inheritdoc/>
-        </member>
-        <member name="P:Gu.Wpf.UiAutomation.VerticalScrollBar.SmallIncrementText">
-            <inheritdoc/>
-        </member>
-        <member name="P:Gu.Wpf.UiAutomation.VerticalScrollBar.LargeDecrementText">
-            <inheritdoc/>
-        </member>
-        <member name="P:Gu.Wpf.UiAutomation.VerticalScrollBar.LargeIncrementText">
-            <inheritdoc/>
-        </member>
-        <member name="P:Gu.Wpf.UiAutomation.TabControl.SelectedItem">
+        <member name="P:Gu.Wpf.UiAutomation.Selector`1.SelectedItem">
             <summary>
-            The currently selected <see cref="T:Gu.Wpf.UiAutomation.TabItem" />
+            Gets the first selected item or null otherwise.
             </summary>
         </member>
-        <member name="P:Gu.Wpf.UiAutomation.TabControl.SelectedIndex">
+        <member name="P:Gu.Wpf.UiAutomation.Selector`1.SelectedIndex">
             <summary>
             The index of the currently selected <see cref="T:Gu.Wpf.UiAutomation.TabItem" />
             </summary>
         </member>
-        <member name="P:Gu.Wpf.UiAutomation.TabControl.Items">
+        <member name="M:Gu.Wpf.UiAutomation.Selector`1.Select(System.Int32)">
             <summary>
-            All <see cref="T:Gu.Wpf.UiAutomation.TabItem" /> objects from this <see cref="T:Gu.Wpf.UiAutomation.TabControl" />
+            Select a row by index.
             </summary>
         </member>
-        <member name="M:Gu.Wpf.UiAutomation.TabControl.Select(System.Int32)">
+        <member name="P:Gu.Wpf.UiAutomation.TabItem.HeaderText">
             <summary>
-            Selects a <see cref="T:Gu.Wpf.UiAutomation.TabItem" /> by index
+            The header text.
             </summary>
         </member>
-        <member name="M:Gu.Wpf.UiAutomation.TabControl.Select(System.String)">
+        <member name="P:Gu.Wpf.UiAutomation.TabItem.Header">
             <summary>
-            Selects a <see cref="T:Gu.Wpf.UiAutomation.TabItem" /> by a give text (name property)
+            The first child so it assumes there is exactly one element in the header.
             </summary>
         </member>
-        <member name="P:Gu.Wpf.UiAutomation.TabItem.IsSelected">
+        <member name="P:Gu.Wpf.UiAutomation.TabItem.Content">
             <summary>
-            Flag to get/set the selection of this element.
+            When the content is a single item.
+            This returns this.FindAllChildren().Skip(1).Single();
+            So it assumes there is exactly one element in the header.
             </summary>
         </member>
-        <member name="M:Gu.Wpf.UiAutomation.TabItem.Select">
+        <member name="P:Gu.Wpf.UiAutomation.TabItem.ContentCollection">
             <summary>
-            Select this element.
+            When the content is an ItemsControl.
+            This returns this.FindAllChildren().Skip(1).ToArray();
+            So it assumes there is exactly one element in the header.
             </summary>
         </member>
-        <member name="M:Gu.Wpf.UiAutomation.TextBox.Enter(System.String)">
+        <member name="M:Gu.Wpf.UiAutomation.TabItem.ContentElements``1(System.Func{System.Windows.Automation.AutomationElement,``0})">
+            <summary>
+            When the content is an ItemsControl.
+            This returns this.FindAllChildren().Skip(1).ToArray();
+            So it assumes there is exactly one element in the header.
+            </summary>
+        </member>
+        <member name="M:Gu.Wpf.UiAutomation.TextBoxBase.Enter(System.String)">
             <summary>
             Simulate typing in text. This is slower than setting Text but raises more events.
             </summary>
@@ -709,11 +690,6 @@
         <member name="P:Gu.Wpf.UiAutomation.TreeView.SelectedTreeViewItem">
             <summary>
             The currently selected <see cref="T:Gu.Wpf.UiAutomation.TreeViewItem" />
-            </summary>
-        </member>
-        <member name="P:Gu.Wpf.UiAutomation.TreeView.Items">
-            <summary>
-            All child <see cref="T:Gu.Wpf.UiAutomation.TreeViewItem" /> objects from this <see cref="T:Gu.Wpf.UiAutomation.TreeView" />
             </summary>
         </member>
         <member name="P:Gu.Wpf.UiAutomation.TreeViewItem.Items">
@@ -739,6 +715,11 @@
         <member name="P:Gu.Wpf.UiAutomation.UiElement.Parent">
             <summary>
             Get the parent <see cref="T:Gu.Wpf.UiAutomation.UiElement"/>
+            </summary>
+        </member>
+        <member name="P:Gu.Wpf.UiAutomation.UiElement.Children">
+            <summary>
+            Get the children
             </summary>
         </member>
         <member name="P:Gu.Wpf.UiAutomation.UiElement.Window">
@@ -951,6 +932,18 @@
             </summary>
             <param name="name">x:Name, Content or AutomationID</param>
         </member>
+        <member name="M:Gu.Wpf.UiAutomation.UiElement.FindCalendar(System.String)">
+            <summary>
+            Find the first <see cref="T:Gu.Wpf.UiAutomation.Calendar"/> by x:Name, Content or AutomationID
+            </summary>
+            <param name="name">x:Name, Content or AutomationID</param>
+        </member>
+        <member name="M:Gu.Wpf.UiAutomation.UiElement.FindCalendarDayButton(System.String)">
+            <summary>
+            Find the first <see cref="T:Gu.Wpf.UiAutomation.CalendarDayButton"/> by x:Name, Content or AutomationID
+            </summary>
+            <param name="name">x:Name, Content or AutomationID</param>
+        </member>
         <member name="M:Gu.Wpf.UiAutomation.UiElement.FindCheckBox(System.String)">
             <summary>
             Find the first <see cref="T:Gu.Wpf.UiAutomation.CheckBox"/> by x:Name, Content or AutomationID
@@ -975,9 +968,21 @@
             </summary>
             <param name="name">x:Name, Content or AutomationID</param>
         </member>
+        <member name="M:Gu.Wpf.UiAutomation.UiElement.FindFrame(System.String)">
+            <summary>
+            Find the first <see cref="T:Gu.Wpf.UiAutomation.Frame"/> by x:Name, Header or AutomationID
+            </summary>
+            <param name="name">x:Name, Content or AutomationID</param>
+        </member>
         <member name="M:Gu.Wpf.UiAutomation.UiElement.FindLabel(System.String)">
             <summary>
             Find the first <see cref="T:Gu.Wpf.UiAutomation.Label"/> by x:Name, Content or AutomationID
+            </summary>
+            <param name="name">x:Name, Content or AutomationID</param>
+        </member>
+        <member name="M:Gu.Wpf.UiAutomation.UiElement.FindGridSplitter(System.String)">
+            <summary>
+            Find the first <see cref="T:Gu.Wpf.UiAutomation.GridSplitter"/> by x:Name, Header or AutomationID
             </summary>
             <param name="name">x:Name, Content or AutomationID</param>
         </member>
@@ -1029,6 +1034,24 @@
             </summary>
             <param name="name">x:Name, Content or AutomationID</param>
         </member>
+        <member name="M:Gu.Wpf.UiAutomation.UiElement.FindOpenFileDialog(System.String)">
+            <summary>
+            Find the first <see cref="T:Gu.Wpf.UiAutomation.OpenFileDialog"/> by x:Name, Content or AutomationID
+            </summary>
+            <param name="name">x:Name, Content or AutomationID</param>
+        </member>
+        <member name="M:Gu.Wpf.UiAutomation.UiElement.FindPasswordBox(System.String)">
+            <summary>
+            Find the first <see cref="T:Gu.Wpf.UiAutomation.PasswordBox"/> by x:Name, Content or AutomationID
+            </summary>
+            <param name="name">x:Name, Content or AutomationID</param>
+        </member>
+        <member name="M:Gu.Wpf.UiAutomation.UiElement.FindRichTextBox(System.String)">
+            <summary>
+            Find the first <see cref="T:Gu.Wpf.UiAutomation.RichTextBox"/> by x:Name, Content or AutomationID
+            </summary>
+            <param name="name">x:Name, Content or AutomationID</param>
+        </member>
         <member name="M:Gu.Wpf.UiAutomation.UiElement.FindProgressBar(System.String)">
             <summary>
             Find the first <see cref="T:Gu.Wpf.UiAutomation.ProgressBar"/> by x:Name, Content or AutomationID
@@ -1044,6 +1067,18 @@
         <member name="M:Gu.Wpf.UiAutomation.UiElement.FindRepeatButton(System.String)">
             <summary>
             Find the first <see cref="T:Gu.Wpf.UiAutomation.RepeatButton"/> by x:Name, Content or AutomationID
+            </summary>
+            <param name="name">x:Name, Content or AutomationID</param>
+        </member>
+        <member name="M:Gu.Wpf.UiAutomation.UiElement.FindSaveFileDialog(System.String)">
+            <summary>
+            Find the first <see cref="T:Gu.Wpf.UiAutomation.SaveFileDialog"/> by x:Name, Content or AutomationID
+            </summary>
+            <param name="name">x:Name, Content or AutomationID</param>
+        </member>
+        <member name="M:Gu.Wpf.UiAutomation.UiElement.FindSeparator(System.String)">
+            <summary>
+            Find the first <see cref="T:Gu.Wpf.UiAutomation.Separator"/> by x:Name, Content or AutomationID
             </summary>
             <param name="name">x:Name, Content or AutomationID</param>
         </member>
@@ -1071,6 +1106,12 @@
             </summary>
             <param name="name">x:Name, Content or AutomationID</param>
         </member>
+        <member name="M:Gu.Wpf.UiAutomation.UiElement.FindTextBoxBase(System.String)">
+            <summary>
+            Find the first <see cref="T:Gu.Wpf.UiAutomation.TextBoxBase"/> by x:Name, Content or AutomationID
+            </summary>
+            <param name="name">x:Name, Content or AutomationID</param>
+        </member>
         <member name="M:Gu.Wpf.UiAutomation.UiElement.FindToggleButton(System.String)">
             <summary>
             Find the first <see cref="T:Gu.Wpf.UiAutomation.ToggleButton"/> by x:Name, Content or AutomationID
@@ -1080,6 +1121,12 @@
         <member name="M:Gu.Wpf.UiAutomation.UiElement.FindTabControl(System.String)">
             <summary>
             Find the first <see cref="T:Gu.Wpf.UiAutomation.TabControl"/> by x:Name, Content or AutomationID
+            </summary>
+            <param name="name">x:Name, Content or AutomationID</param>
+        </member>
+        <member name="M:Gu.Wpf.UiAutomation.UiElement.FindTitleBar(System.String)">
+            <summary>
+            Find the first <see cref="T:Gu.Wpf.UiAutomation.TitleBar"/> by x:Name, Header or AutomationID
             </summary>
             <param name="name">x:Name, Content or AutomationID</param>
         </member>
@@ -1216,6 +1263,18 @@
             <summary>
             Finds all items which match the given xpath.
             </summary>
+        </member>
+        <member name="P:Gu.Wpf.UiAutomation.VerticalScrollBar.SmallDecrementText">
+            <inheritdoc/>
+        </member>
+        <member name="P:Gu.Wpf.UiAutomation.VerticalScrollBar.SmallIncrementText">
+            <inheritdoc/>
+        </member>
+        <member name="P:Gu.Wpf.UiAutomation.VerticalScrollBar.LargeDecrementText">
+            <inheritdoc/>
+        </member>
+        <member name="P:Gu.Wpf.UiAutomation.VerticalScrollBar.LargeIncrementText">
+            <inheritdoc/>
         </member>
         <member name="P:Gu.Wpf.UiAutomation.Window.IsMainWindow">
             <summary>
@@ -1368,6 +1427,11 @@
         <member name="M:Gu.Wpf.UiAutomation.Capture.ToWpf(System.Drawing.Bitmap)">
             <summary>
             Converts a WinForms bitmap to a WPF bitmap
+            </summary>
+        </member>
+        <member name="P:Gu.Wpf.UiAutomation.Conditions.Text">
+            <summary>
+            For finding textblocks and labels
             </summary>
         </member>
         <member name="M:Gu.Wpf.UiAutomation.Debug.GetXPathToElement(Gu.Wpf.UiAutomation.UiElement,Gu.Wpf.UiAutomation.UiElement)">
