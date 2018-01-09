@@ -95,7 +95,7 @@ namespace WpfApplication1
             //}
             foreach (AutomationElement cbxItem in comboboxItem)
             {
-                if(cbxItem.FindFirst(TreeScope.Children, System.Windows.Automation.Condition.TrueCondition).Current.Name==item)
+                if (cbxItem.FindFirst(TreeScope.Children, System.Windows.Automation.Condition.TrueCondition).Current.Name == item)
                 {
                     break;
                 }
@@ -109,7 +109,7 @@ namespace WpfApplication1
             selectPattern.Select();
         }
         #endregion
-        public static AutomationPattern GetSpecifiedPattern( this AutomationElement element, string patternName)
+        public static AutomationPattern GetSpecifiedPattern(this AutomationElement element, string patternName)
         {
             AutomationPattern[] supportedPattern = element.GetSupportedPatterns();
 
@@ -155,45 +155,50 @@ namespace WpfApplication1
         private void button_Click(object sender, RoutedEventArgs e)
         {
 
-            #region oldcode
-            AutomationElement target = null;
-            AutomationElementCollection automationCollection = AutomationElement.RootElement.FindAll(TreeScope.Children, System.Windows.Automation.Condition.TrueCondition);
-            foreach (AutomationElement automation in automationCollection)
-            {
-                if (automation.Current.Name == "Hệ Thống Quản Lý Bán Lẻ")// sửa lại thành cửa sổ đang cần spy
-                {
-                    target = automation;
-                    break;
-                }
+            #region UIAutomation
+            //AutomationElement target = null;
+            //AutomationElementCollection automationCollection = AutomationElement.RootElement.FindAll(TreeScope.Children, System.Windows.Automation.Condition.TrueCondition);
+            //foreach (AutomationElement automation in automationCollection)
+            //{
+            //    if (automation.Current.Name == "TestForm")// sửa lại thành cửa sổ đang cần spy
+            //    {
+            //        target = automation;
+            //        break;
+            //    }
 
-            }
-            Process[] flexproc = Process.GetProcessesByName("FlexBARMS");// Sửa lại tên app
-            TestMethod.SetForegroundWindow(flexproc[0].MainWindowHandle);
-            Thread.Sleep(1000);
-            var automationlist = TestMethod.GetAllDescendants(target);
-            int i = 0;
-            foreach (AutomationElement a in automationlist)
-            {
-                listBox.Items.Add(i+a.Current.AutomationId+"_"+a.Current.Name+"_"+a.Current.ControlType.LocalizedControlType);
-                if (a.Current.AutomationId == "PersonalCountryCmb")// sửa lại thành PersonalCountryCmb
-                //if (i == 63)
-                {
+            //}
+            //Process[] flexproc = Process.GetProcessesByName("WpfApp1");// Sửa lại tên app
+            //TestMethod.SetForegroundWindow(flexproc[0].MainWindowHandle);
+            //Thread.Sleep(1000);
+            //var automationlist = TestMethod.GetAllDescendants(target);
+            //int i = 0;
+            //foreach (AutomationElement a in automationlist)
+            //{
+            //    listBox.Items.Add(i+a.Current.AutomationId+"_"+a.Current.Name+"_"+a.Current.ControlType.LocalizedControlType);
+            //    if (a.Current.AutomationId == "testCmb")// sửa lại thành PersonalCountryCmb
+            //    //if (i == 63)
+            //    {
 
 
-                    try
-                    {
-                        //a.ActionSelectComboBoxItem(2);
-                        //Thread.Sleep(1000);
-                        ((ValuePattern)a.GetCurrentPattern(ValuePattern.Pattern)).SetValue("Russia");
+            //        try
+            //        {
+            //            //a.ActionSelectComboBoxItem(2);
+            //            ExpandCollapsePattern expandCollapsePattern = a.GetCurrentPattern(ExpandCollapsePattern.Pattern) as ExpandCollapsePattern;
+            //            expandCollapsePattern.Expand();
+            //            var comboBoxEditItemCondition = new System.Windows.Automation.PropertyCondition(AutomationElement.ClassNameProperty, "ComboBoxEditItem");
+            //            var listItems = a.FindAll(TreeScope.Subtree, comboBoxEditItemCondition);//It's can only get one item in the list (the first one).
+            //            var testItem = listItems[4];
+            //            (testItem.GetCurrentPattern(SelectionItemPattern.Pattern) as SelectionItemPattern).Select();
+            //            expandCollapsePattern.Collapse();
 
-                    }
-                    catch (Exception error)
-                    {
-                        MessageBox.Show(error.Message);
-                    }
-                }
-                i++;
-            }
+            //        }
+            //        catch (Exception error)
+            //        {
+            //            MessageBox.Show(error.Message);
+            //        }
+            //    }
+            //    i++;
+            //}
             #endregion
             //var items = a.FindAll(TreeScope.Descendants, new System.Windows.Automation.PropertyCondition(AutomationElement.AutomationIdProperty, "PART_Item"));
             //var items = a.FindAll(TreeScope.Descendants, System.Windows.Automation.Condition.TrueCondition);
@@ -230,7 +235,7 @@ namespace WpfApplication1
             //        if (element.ControlType.ToString() != "ScrollBar")
             //        {
             //            if (element.AutomationId.ToString() != "")
-            //                 listBox.Items.Add(element.AutomationId.ToString() + "_" + element.ControlType.ToString().Replace(" ", "_"));
+            //                listBox.Items.Add(element.AutomationId.ToString() + "_" + element.ControlType.ToString().Replace(" ", "_"));
             //            else if (element.AutomationId.ToString() == "")
             //            {
             //                if (element.Name.ToString() != "")
@@ -255,11 +260,41 @@ namespace WpfApplication1
             #endregion
 
             #region GuUI
-            //Process[] proc = Process.GetProcessesByName("FlexBARMS");
+            //Process[] proc = Process.GetProcessesByName("WpfApp1");
             //var app = Gu.Wpf.UiAutomation.Application.Attach(proc[0].Id);
+            //var mainWindow = app.MainWindow;
+            //var elements=mainWindow.FindAll(TreeScope.Descendants, System.Windows.Automation.Condition.TrueCondition);
+            //foreach (Gu.Wpf.UiAutomation.UiElement a in elements)
+            //{
+  
+            //    if (a.AutomationId == "testCmb")// sửa lại thành PersonalCountryCmb
+            //    //if (i == 63)
+            //    {
 
+
+            //        try
+            //        {
+            //            MessageBox.Show(a.AutomationElement.Current.IsEnabled.ToString());
+            //            //a.ActionSelectComboBoxItem(2);
+            //            ExpandCollapsePattern expandCollapsePattern = a.AutomationElement.GetCurrentPattern(ExpandCollapsePattern.Pattern) as ExpandCollapsePattern;
+            //            expandCollapsePattern.Expand();
+                        
+            //            var comboBoxEditItemCondition = new System.Windows.Automation.PropertyCondition(AutomationElement.ClassNameProperty, "ComboBoxEditItem");
+            //            var listItems = a.FindAll(TreeScope.Subtree, comboBoxEditItemCondition);//It's can only get one item in the list (the first one).
+            //            var testItem = listItems[4];
+            //            (testItem.AutomationElement.GetCurrentPattern(SelectionItemPattern.Pattern) as SelectionItemPattern).Select();
+            //            expandCollapsePattern.Collapse();
+
+            //        }
+            //        catch (Exception error)
+            //        {
+            //            MessageBox.Show(error.Message);
+            //        }
+            //    }
+            //}
             #endregion
         }
     }
 }
+
 
