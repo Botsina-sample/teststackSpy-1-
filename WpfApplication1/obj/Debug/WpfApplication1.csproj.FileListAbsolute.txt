@@ -42,3 +42,12 @@ C:\Users\Kiet\Desktop\teststackSpy(1)\WpfApplication1\obj\Debug\MainWindow.baml
 C:\Users\Kiet\Desktop\teststackSpy(1)\WpfApplication1\obj\Debug\WpfApplication1.g.resources
 C:\Users\Kiet\Desktop\teststackSpy(1)\WpfApplication1\obj\Debug\WpfApplication1.Properties.Resources.resources
 C:\Users\Kiet\Desktop\teststackSpy(1)\WpfApplication1\obj\Debug\WpfApplication1.csproj.GenerateResource.Cache
+C:\Users\Kiet\Desktop\teststackSpy(1)\WpfApplication1\bin\Debug\Castle.Core.dll
+C:\Users\Kiet\Desktop\teststackSpy(1)\WpfApplication1\bin\Debug\TestStack.White.dll
+C:\Users\Kiet\Desktop\teststackSpy(1)\WpfApplication1\bin\Debug\TestStack.White.Reporting.dll
+C:\Users\Kiet\Desktop\teststackSpy(1)\WpfApplication1\bin\Debug\TestStack.White.ScreenObjects.dll
+C:\Users\Kiet\Desktop\teststackSpy(1)\WpfApplication1\bin\Debug\Castle.Core.xml
+C:\Users\Kiet\Desktop\teststackSpy(1)\WpfApplication1\bin\Debug\TestStack.White.pdb
+C:\Users\Kiet\Desktop\teststackSpy(1)\WpfApplication1\bin\Debug\TestStack.White.xml
+C:\Users\Kiet\Desktop\teststackSpy(1)\WpfApplication1\bin\Debug\TestStack.White.Reporting.pdb
+C:\Users\Kiet\Desktop\teststackSpy(1)\WpfApplication1\bin\Debug\TestStack.White.ScreenObjects.pdb

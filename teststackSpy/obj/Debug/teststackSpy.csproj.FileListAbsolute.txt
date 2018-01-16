@@ -13,3 +13,6 @@ C:\Users\kiettt.td\Downloads\teststackSpy\teststackSpy\obj\Debug\teststackSpy.cs
 C:\Users\Kiet\Desktop\teststackSpy(1)\teststackSpy\bin\Debug\teststackSpy.exe.config
 C:\Users\Kiet\Desktop\teststackSpy(1)\teststackSpy\obj\Debug\teststackSpy.exe
 C:\Users\Kiet\Desktop\teststackSpy(1)\teststackSpy\obj\Debug\teststackSpy.pdb
+C:\Users\Kiet\Desktop\teststackSpy(1)\teststackSpy\bin\Debug\teststackSpy.exe
+C:\Users\Kiet\Desktop\teststackSpy(1)\teststackSpy\bin\Debug\teststackSpy.pdb
+C:\Users\Kiet\Desktop\teststackSpy(1)\teststackSpy\obj\Debug\teststackSpy.csprojResolveAssemblyReference.cache
